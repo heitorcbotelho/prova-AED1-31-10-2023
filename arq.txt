@@ -1,0 +1,3 @@
+Pedro paulo;matematica;90.0
+Mario;portugues;12.0
+Marcus notch;matematica;10.0
