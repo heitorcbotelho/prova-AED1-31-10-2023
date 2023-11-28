@@ -29,10 +29,17 @@ while True:
     elif(esc == 3):
         nome = input("Nome: ").capitalize()
         disciplina = input("Disciplina: ")
-        print(bib.infNota(nome, disciplina))
+        alunos = bib.infNota(nome, disciplina)
+        print("Alunos:")
+        for aluno in alunos:
+            print(f"Nome: {aluno['nome']}")
+            print(f"Disciplina: {aluno['disciplina']}")
+            print(f"Nota: {aluno['nota']}")
+            print("-" * 20)
 
     elif(esc == 4):
         disciplina = input("Disciplina: ")
         print(bib.media(disciplina))
+
     else:
         break

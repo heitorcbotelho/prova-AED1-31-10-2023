@@ -13,7 +13,7 @@ def listar(file):
         dados = linhas[c].replace("\n","")
         dados = dados.split(";")
         vetor[c] = {}
-        vetor[c]["nome"] = dados[0]
+        vetor[c]["nome"] = str(dados[0])
         vetor[c]["disciplina"] = dados[1]
         vetor[c]["nota"] = float(dados[2])
 
@@ -23,9 +23,10 @@ def listar(file):
 def infNota(nome, disc):
     alunos = listar("arq.txt")
     for aluno in alunos:
-        if(aluno['nome'] == nome and aluno['disciplina'] == disc):
-            return aluno
+        if((aluno['nome']).upper() == nome.upper() and (aluno['disciplina']).upper() == disc.upper()):
+            return [aluno]
     print("Aluno não encontrado na disciplina")
+    return []
 
 def media(disciplina):
     alunos  = listar("arq.txt")
